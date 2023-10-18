@@ -5,9 +5,10 @@ using UnityEngine;
 public class CannonMovementScript : MonoBehaviour
 {
     public float rotationSpeed = 100f;
-    public GameObject bulletPrefab;
+    public GameObject Pollo;
     public float bulletSpeed = 20f;
     private float rotationZ;
+    private int n = 0; 
 
     void Update()
     {
@@ -24,11 +25,11 @@ public class CannonMovementScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, rotationZ);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && n++==0)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
             rb.velocity = transform.up * bulletSpeed;
+           
         }
     }
 }
