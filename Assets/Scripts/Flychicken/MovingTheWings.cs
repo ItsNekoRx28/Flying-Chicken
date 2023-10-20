@@ -34,13 +34,15 @@ public class MovingTheWings : MonoBehaviour
         if (isLaunched) {
             // Mover el personaje hacia adelante
             //rb.AddForce(transform.forward * speed);
-            float move = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(move * speed, rb.velocity.y);
+            //float move = Input.GetAxis("Horizontal");
+            //rb.velocity = new Vector2(move * speed, rb.velocity.y);
+                //rb.velocity = transform.up * speed;
 
             if (Input.GetKeyDown(KeyCode.Space) && isLaunched)
             {
 
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                rb.velocity = transform.up * speed;
 
             }
         }
