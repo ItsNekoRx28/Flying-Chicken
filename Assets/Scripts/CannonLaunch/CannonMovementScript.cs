@@ -8,7 +8,8 @@ public class CannonMovementScript : MonoBehaviour
     public GameObject Pollo;
     public float bulletSpeed = 20f;
     private float rotationZ;
-    private int n = 0; 
+
+
 
     void Update()
     {
@@ -18,18 +19,13 @@ public class CannonMovementScript : MonoBehaviour
             rotationZ = Mathf.Clamp(rotationZ, -80, -20);
             transform.rotation = Quaternion.Euler(0, 0, rotationZ);
         }
+
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             rotationZ += rotationSpeed * Time.deltaTime;
             rotationZ = Mathf.Clamp(rotationZ, -80, -20);
             transform.rotation = Quaternion.Euler(0, 0, rotationZ);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space) && n++==0)
-        {
-            Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
-            rb.velocity = transform.up * bulletSpeed;
-           
         }
     }
 }
