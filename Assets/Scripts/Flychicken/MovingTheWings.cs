@@ -8,14 +8,14 @@ public class MovingTheWings : MonoBehaviour
 {
     public float speed = 5f; // Velocidad de movimiento hacia adelante
     public float jumpForce = 10f; // Fuerza de salto
-    private Rigidbody rb; // Referencia al componente Rigidbody
+    private Rigidbody2D rb; // Referencia al componente Rigidbody
     private bool isLaunched = false; // Bandera para verificar si el personaje está en el suelo
-    private Vector3 _position;
+    private Vector2 _position;
     private float move;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
 
@@ -28,20 +28,24 @@ public class MovingTheWings : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isLaunched = true;
+           
         }
 
         if (isLaunched) {
             // Mover el personaje hacia adelante
             //rb.AddForce(transform.forward * speed);
-            Vector3 forwardMovement = transform.forward * speed * Time.deltaTime;
-            rb.MovePosition(rb.position + forwardMovement);
+            float move = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(move * speed, rb.velocity.y);
+
+            if (Input.GetKeyDown(KeyCode.Space) && isLaunched)
+            {
+
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isLaunched){
-
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-             
-        }
+        
     }
 
 }
