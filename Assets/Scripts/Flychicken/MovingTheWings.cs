@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class MovingTheWings : MonoBehaviour
 {
     public float speed = 5f; // Velocidad de movimiento hacia adelante
     public float jumpForce = 10f; // Fuerza de salto
     private Rigidbody2D rb; // Referencia al componente Rigidbody
-    private bool isLaunched = false; // Bandera para verificar si el personaje está en el suelo
+    private bool isLaunched = false; // Bandera para verificar si el personaje estï¿½ en el suelo
     private Vector2 _position;
     private float move;
 
@@ -49,5 +51,19 @@ public class MovingTheWings : MonoBehaviour
 
         
     }
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Verifica si la colisiÃ³n es con un objeto que tenga la etiqueta "Suelo" (debes asignar esta etiqueta al objeto del suelo).
+        if (collision.gameObject.CompareTag("floor"))
+        {
+            // Reinicia la partida cargando la escena actual.
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+
+    
 
 }
