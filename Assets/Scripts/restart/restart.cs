@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
-public class restart : MonoBehaviour
+public class Restart : MonoBehaviour
 {
-    public Text messageText; 
-    public string messageToShow = "Has Ganado";
+    public string messageToShow = "¡Has Ganado!";
 
     // Start is called before the first frame update
     void Start()
     {
-        print("aa");
+
     }
 
     // Update is called once per frame
@@ -37,8 +36,10 @@ public class restart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("wall"))
         {
-           messageText.text = messageToShow;
-          
+            GameObject go = GameObject.FindGameObjectWithTag("WinMsg");
+            go.GetComponent<Text>().text = messageToShow;
+            Time.timeScale = 0f;
+
         }
     }
 
