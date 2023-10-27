@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
     }
+
     public void Restart()
     {
         // Carga la escena actual de nuevo

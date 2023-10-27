@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class CannonMovementScript : MonoBehaviour
     public float rotationSpeed = 100f;
     public GameObject Pollo;
     public float bulletSpeed = 20f;
-    private float rotationZ;
+    public float rotationZ;
 
 
 
