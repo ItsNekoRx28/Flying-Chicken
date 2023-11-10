@@ -9,6 +9,7 @@ public class CannonMovementScript : MonoBehaviour
     public GameObject Pollo;
     public float bulletSpeed = 20f;
     public float rotationZ;
+    private bool chickenLaunched = false;
 
 
 
@@ -27,6 +28,13 @@ public class CannonMovementScript : MonoBehaviour
             rotationZ = Mathf.Clamp(rotationZ, -80, -20);
             transform.rotation = Quaternion.Euler(0, 0, rotationZ);
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !chickenLaunched)
+        {
+            Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
+            rb.velocity = transform.up * bulletSpeed;
+            chickenLaunched = true;
         }
     }
 }
