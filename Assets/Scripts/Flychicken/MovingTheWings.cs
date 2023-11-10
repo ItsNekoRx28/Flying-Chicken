@@ -53,5 +53,9 @@ public class MovingTheWings : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
+    public bool getIsLaunched(){
+        return isLaunched;
+    }
     
 }
