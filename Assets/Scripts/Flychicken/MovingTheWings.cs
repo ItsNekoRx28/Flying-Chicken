@@ -35,15 +35,15 @@ public class MovingTheWings : MonoBehaviour
             {
                 this.Jump();
             }
+            // Calcula el ángulo de la velocidad en radianes
+            float angulo = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
+
+            // Convierte el ángulo a grados
+            angulo = angulo * Mathf.Rad2Deg;
+
+            // Rota el objeto para que apunte en la dirección de la velocidad
+            rb.MoveRotation(angulo);
         } 
-        // Calcula el ángulo de la velocidad en radianes
-        float angulo = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
-
-        // Convierte el ángulo a grados
-        angulo = angulo * Mathf.Rad2Deg;
-
-        // Rota el objeto para que apunte en la dirección de la velocidad
-        rb.MoveRotation(angulo);
     }
 
     public void Jump()
