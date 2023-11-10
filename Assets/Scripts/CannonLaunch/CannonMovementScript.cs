@@ -15,7 +15,8 @@ public class CannonMovementScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if(!chickenLaunched){
+            if (Input.GetKey(KeyCode.RightArrow))
         {
             rotationZ -= rotationSpeed * Time.deltaTime;
             rotationZ = Mathf.Clamp(rotationZ, -80, -20);
@@ -35,6 +36,7 @@ public class CannonMovementScript : MonoBehaviour
             Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
             rb.velocity = transform.up * bulletSpeed;
             chickenLaunched = true;
+        }
         }
     }
 }
