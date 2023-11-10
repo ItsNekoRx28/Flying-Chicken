@@ -40,8 +40,8 @@ public class MovingTheWings : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        rb.velocity = transform.up * speed;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Anade la vertical
+        rb.velocity = new Vector2(rb.velocity.x, transform.up.y * speed); //Mantiene la horizontal y cambia la vertical
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
