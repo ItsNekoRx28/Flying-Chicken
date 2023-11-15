@@ -17,26 +17,26 @@ public class CannonMovementScript : MonoBehaviour
     {
         if(!chickenLaunched){
             if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rotationZ -= rotationSpeed * Time.deltaTime;
-            rotationZ = Mathf.Clamp(rotationZ, -80, -20);
-            transform.rotation = Quaternion.Euler(0, 0, rotationZ);
-        }
+            {
+                rotationZ -= rotationSpeed * Time.deltaTime;
+                rotationZ = Mathf.Clamp(rotationZ, -80, -20);
+                transform.rotation = Quaternion.Euler(0, 0, rotationZ);
+            }
 
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rotationZ += rotationSpeed * Time.deltaTime;
-            rotationZ = Mathf.Clamp(rotationZ, -80, -20);
-            transform.rotation = Quaternion.Euler(0, 0, rotationZ);
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                rotationZ += rotationSpeed * Time.deltaTime;
+                rotationZ = Mathf.Clamp(rotationZ, -80, -20);
+                transform.rotation = Quaternion.Euler(0, 0, rotationZ);
 
-        }
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !chickenLaunched)
-        {
-            Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
-            rb.velocity = transform.up * bulletSpeed;
-            chickenLaunched = true;
-        }
+            if (Input.GetKeyDown(KeyCode.Space) && !chickenLaunched)
+            {
+                Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
+                rb.velocity = transform.up * bulletSpeed;
+                chickenLaunched = true;
+            }
         }
     }
 }
