@@ -8,11 +8,8 @@ TagManager:
   - floor
   - wall
   - WinMsg
-<<<<<<< HEAD
   - Enemies
-=======
   - Coin
->>>>>>> 4bf676d05270aa218ddc515c7909329f9dd741f1
   layers:
   - Default
   - TransparentFX
@@ -20,7 +17,7 @@ TagManager:
   - Pollo
   - Water
   - UI
-  - Coin
+  - Enemies
   - 
   - 
   - 

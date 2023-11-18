@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public CannonMovementScript cannon;
     public Text coinText;
     public Text distanceText;
+    private Boolean Launched = false;
 
     void Awake()
     {
@@ -30,9 +32,13 @@ public class GameManager : MonoBehaviour
         coinText.text = "Coins: " + coinCount.ToString();
     }
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(UpdateDistance());
+        if (!Launched && Input.GetKeyDown(KeyCode.Space))
+        {
+            Launched = true;
+            StartCoroutine(UpdateDistance());
+        }
     }
 
     IEnumerator UpdateDistance()
