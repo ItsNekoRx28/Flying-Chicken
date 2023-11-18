@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.AddCoin(1);
+            gameObject.SetActive(false);
+            Physics2D.IgnoreCollision(other, GetComponent<Collider2D>(), true);
+        }
     }
 }
