@@ -7,11 +7,12 @@ TagManager:
   - UI
   - floor
   - wall
+  - WinMsg
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pollo
   - Water
   - UI
   - 
