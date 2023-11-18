@@ -25,11 +25,6 @@ public class MovingTheWings : MonoBehaviour
         }
 
         if (isLaunched) {
-            // Mover el personaje hacia adelante
-            //rb.AddForce(transform.forward * speed);
-            //float move = Input.GetAxis("Horizontal");
-            //rb.velocity = new Vector2(move * speed, rb.velocity.y);
-                //rb.velocity = transform.up * speed;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -51,16 +46,6 @@ public class MovingTheWings : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Anade la vertical
         rb.velocity = new Vector2(rb.velocity.x, transform.up.y * speed); //Mantiene la horizontal y cambia la vertical
 
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Verifica si la colisión es con un objeto que tenga la etiqueta "Suelo" (etiqueta asignada al objeto del suelo)
-        if (collision.gameObject.CompareTag("floor"))
-        {
-            // Reinicia la partida cargando la escena actual
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 
     public bool getIsLaunched(){
