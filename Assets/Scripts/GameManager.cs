@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private int coinCount;
     private float distanceTravelled = 0f;
-
+    public GameUtils gameUtils;
     public CannonMovementScript cannon;
     public Text coinText;
     public Text distanceText;
@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
 
     public void AddCoin(int amount)
@@ -44,5 +43,10 @@ public class GameManager : MonoBehaviour
             distanceTravelled +=  cannon.bulletSpeed * 0.1f; // Asume que la velocidad es constante
             distanceText.text = "DISTANCE: " + distanceTravelled.ToString("0.00") + " m";
         }
+    }
+
+    public void GameOver() // Añade esta función
+    {
+        gameUtils.GameOver();
     }
 }

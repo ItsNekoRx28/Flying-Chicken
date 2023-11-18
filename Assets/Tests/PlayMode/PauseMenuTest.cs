@@ -9,7 +9,7 @@ public class PauseMenuTest
     [UnityTest]
     public IEnumerator PauseAndResume()
     {
-        PauseMenu pauseMenu = new GameObject().AddComponent<PauseMenu>();
+        GameUtils pauseMenu = new GameObject().AddComponent<GameUtils>();
         pauseMenu.pauseMenuUI = new GameObject();
 
         // Test pausing
@@ -32,7 +32,7 @@ public class PauseMenuTest
     [UnityTest]
     public IEnumerator Restart()
     {
-        PauseMenu pauseMenu = new GameObject().AddComponent<PauseMenu>();
+        GameUtils pauseMenu = new GameObject().AddComponent<GameUtils>();
         pauseMenu.pauseMenuUI = new GameObject();
 
         // Load a test scene
