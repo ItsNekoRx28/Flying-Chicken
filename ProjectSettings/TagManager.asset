@@ -8,6 +8,7 @@ TagManager:
   - floor
   - wall
   - WinMsg
+  - Enemies
   layers:
   - Default
   - TransparentFX
