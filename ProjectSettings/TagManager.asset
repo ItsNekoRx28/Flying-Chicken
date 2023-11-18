@@ -8,6 +8,7 @@ TagManager:
   - floor
   - wall
   - WinMsg
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Pollo
   - Water
   - UI
-  - 
+  - Coin
   - 
   - 
   - 
