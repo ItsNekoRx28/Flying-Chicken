@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public CannonMovementScript cannon;
     public Text coinText;
     public Text distanceText;
+    public GameObject startPos;
     private Boolean Launched = false;
 
     void Awake()
@@ -34,22 +35,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!Launched && Input.GetKeyDown(KeyCode.Space))
-        {
-            Launched = true;
-            StartCoroutine(UpdateDistance());
-        }
+ 
     }
 
-    IEnumerator UpdateDistance()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(0.1f);
-            distanceTravelled +=  cannon.bulletSpeed * 0.1f; // Asume que la velocidad es constante
-            distanceText.text = "DISTANCE: " + distanceTravelled.ToString("0.00") + " m";
-        }
-    }
+
 
     public void GameOver() // Añade esta función
     {

@@ -3,7 +3,12 @@ guid: e6b8eb2c543f38240b67727f2113b1c5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameUtils: {instanceID: 0}
+  - cannon: {instanceID: 0}
+  - coinText: {instanceID: 0}
+  - distanceText: {instanceID: 0}
+  - startPos: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
