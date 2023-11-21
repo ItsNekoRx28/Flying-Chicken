@@ -3663,12 +3663,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1505610274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bf0a4bf78f799b48840a4f44df437fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 601b39b7dd7b9834083a10d6d73ec830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pollo: {fileID: 1366553635}
-  offset: {x: 0, y: 0, z: -2}
-  cameraSpeed: 10
+  offset: {x: -5, y: 0, z: 0}
+  upperLimit: 100
 --- !u!114 &1505610279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3800,28 +3800,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1562927198}
   - component: {fileID: 1562927197}
-  - component: {fileID: 1562927196}
+  - component: {fileID: 1562927199}
   m_Layer: 3
-  m_Name: Square
+  m_Name: Spawner
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1562927196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562927195}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9dc237d04a3ca24c8f28e4c483311cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pollo: {fileID: 1366553633}
-  distancia: 10
 --- !u!212 &1562927197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3874,21 +3860,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1562927198
-Transform:
+--- !u!224 &1562927198
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562927195}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.64, y: 0.22, z: 10}
-  m_LocalScale: {x: -1.0224563, y: 11.7485, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: -0.85952, y: 11.504602, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1505610277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 14.67, y: 1.03}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1562927199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562927195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9624414fc8253a14ca918cf3cf8e0581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planePrefab: {fileID: 1052126727252899544, guid: adc1263fc05843642a1f0f979b1488b3, type: 3}
+  balloonPrefab: {fileID: 2735579678258570691, guid: ac2b295c8f8ab6d4ba740dc081df2c23, type: 3}
+  carPrefab: {fileID: 387037951380643757, guid: a64dde8d3eb88264a9cd74de0cd5a921, type: 3}
+  jumpPadPrefab: {fileID: 7581803019948417286, guid: 11fdd07dcdc86b545ba3acb5172bc96c, type: 3}
+  spawnRatePerMinute: 10
 --- !u!1 &1640274919
 GameObject:
   m_ObjectHideFlags: 0
