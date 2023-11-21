@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class MovingTheWings : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class MovingTheWings : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 this.Jump();
+
             }
             // Calcula el ángulo de la velocidad en radianes
             float angulo = Mathf.Atan2(rb.velocity.y, rb.velocity.x);

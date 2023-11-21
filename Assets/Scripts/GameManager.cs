@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public static Boolean isPolloLanzado = false;
     private int coinCount;
     public GameUtils gameUtils;
     public Text coinText;
