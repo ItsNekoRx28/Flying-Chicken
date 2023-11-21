@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 public class MovingTheWings : MonoBehaviour
 {
-    public float speed = 5f; // Velocidad de movimiento hacia adelante
     public float jumpForce = 10f; // Fuerza de salto
     public Rigidbody2D rb; // Referencia al componente Rigidbody
     private bool isLaunched = false; // Bandera para verificar si el personaje est� en el suelo
     private Vector2 _position;
     private float move;
+    public CameraFollow camara;
+    public float jumpLimitFromCamera;
 
     void Start()
     {
@@ -30,8 +31,9 @@ public class MovingTheWings : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                this.Jump();
-
+                if(camara.upperLimit >= transform.position.y - jumpLimitFromCamera){
+                    this.Jump();
+                }
             }
             // Calcula el ángulo de la velocidad en radianes
             float angulo = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
@@ -46,9 +48,8 @@ public class MovingTheWings : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Anade la vertical
-        rb.velocity = new Vector2(rb.velocity.x, transform.up.y * speed); //Mantiene la horizontal y cambia la vertical
-
+        rb.AddForce(Vector2.up, ForceMode2D.Impulse); //Anade la vertical
+        rb.velocity = new Vector2(rb.velocity.x, transform.up.y * jumpForce); //Mantiene la horizontal y cambia la vertical
     }
 
     public bool getIsLaunched(){
