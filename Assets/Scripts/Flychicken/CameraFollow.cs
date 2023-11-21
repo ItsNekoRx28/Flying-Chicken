@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-   
     public Transform pollo;
-
     public Vector3 offset;
+    public float upperLimit;
 
-    public float cameraSpeed = 10f;
+    private float halfInitialCameraWidth;
+    private float halfInitialCameraHeight;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        halfInitialCameraWidth = transform.position.x + offset.x;
+        halfInitialCameraHeight = transform.position.y;
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        transform.position = pollo.position + offset;
+        if (pollo.position.x >= halfInitialCameraWidth)
+        {
+            float x = Mathf.Clamp(pollo.position.x - offset.x, halfInitialCameraWidth, float.MaxValue);
+            float y = Mathf.Clamp(pollo.position.y - offset.y, halfInitialCameraHeight, upperLimit);
+            transform.position = new Vector3(x, y, transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        }
     }
 }
