@@ -9,15 +9,19 @@ public class DistanceCounter : MonoBehaviour
     public Text distanceText;
     private float distanceTravelled = 0f;
     public GameObject startPos;
+
     void Start()
     {
-        
+        StartCoroutine(UpdateDistance());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator UpdateDistance()
     {
-        distanceTravelled = (startPos.transform.position.x + this.transform.position.x);
-        distanceText.text = "DISTANCE: " + distanceTravelled.ToString("0.00") + " m";
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            distanceTravelled = (startPos.transform.position.x + this.transform.position.x);
+            distanceText.text = "DISTANCE: " + distanceTravelled.ToString("0.00") + " m";
+        }
     }
 }
