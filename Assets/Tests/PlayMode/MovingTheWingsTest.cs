@@ -11,13 +11,13 @@ public class MovingTheWingsTest
         GameObject playerObject = new GameObject();
         MovingTheWings playerController = playerObject.AddComponent<MovingTheWings>();
         
-        playerController.speed = 5f; // Establece una velocidad de movimiento
+        //playerController.speed = 5f; // Establece una velocidad de movimiento
         playerController.jumpForce = 10f; // Establece una fuerza de salto
         playerController.rb = playerObject.AddComponent<Rigidbody2D>();
         
         var yPositionBeforeJump = playerController.transform.position.y;
 
-        // Espera un frame para permitir que el controlador se actualice después del salto
+        // Espera un frame para permitir que el controlador se actualice despuï¿½s del salto
         yield return null;
 
         // Realiza un salto
@@ -25,10 +25,10 @@ public class MovingTheWingsTest
         for (int i = 0; i < 3; i++)
         {
             playerController.rb.AddForce(Vector2.up * playerController.jumpForce, ForceMode2D.Impulse);
-            playerController.rb.velocity = playerController.transform.up * playerController.speed;
+            playerController.rb.velocity = playerController.transform.up * playerController.jumpForce;
         }
 
-        // Espera un frame para permitir que el controlador se actualice después del salto
+        // Espera un frame para permitir que el controlador se actualice despuï¿½s del salto
         yield return null;
 
         var yPositionAfterJump = playerController.transform.position.y;
@@ -53,10 +53,10 @@ public class MovingTheWingsTest
 
         var finalPos = floorObject.transform.position;
 
-        // Mueve al jugador hacia abajo para simular una colisión con el suelo
+        // Mueve al jugador hacia abajo para simular una colisiï¿½n con el suelo
         playerController.transform.position = finalPos;
 
-        // Espera un frame para permitir que el controlador se actualice y detecte la colisión
+        // Espera un frame para permitir que el controlador se actualice y detecte la colisiï¿½n
         yield return null;
 
         // Verifica si el jugador ha colisionado con el suelo y ha reiniciado la partida
