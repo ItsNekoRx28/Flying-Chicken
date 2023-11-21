@@ -7,13 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private int coinCount;
-    private float distanceTravelled = 0f;
     public GameUtils gameUtils;
-    public CannonMovementScript cannon;
     public Text coinText;
-    public Text distanceText;
-    public GameObject startPos;
-    private Boolean Launched = false;
 
     void Awake()
     {
@@ -32,13 +27,6 @@ public class GameManager : MonoBehaviour
         coinCount += amount;
         coinText.text = "Coins: " + coinCount.ToString();
     }
-
-    void Update()
-    {
- 
-    }
-
-
 
     public void GameOver() // Añade esta función
     {
