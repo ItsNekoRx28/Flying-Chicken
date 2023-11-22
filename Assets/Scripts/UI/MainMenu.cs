@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -46,19 +44,19 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void LoadStartScene()
+    public void LoadLevel1()
     {
         SceneManager.LoadScene("WinLose");
     }
-    public void LoadStart()
+    public void LoadStartMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public void LoadLevelUi()
+    public void LoadLevelMenu()
     {
-        SceneManager.LoadScene("uiNivel");
+        SceneManager.LoadScene("LevelMenu");
     }
-    public void LoadShop()
+    public void LoadShopMenu()
     {
         SceneManager.LoadScene("ShopMenu");
     }
@@ -66,14 +64,14 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void mejoraCanon()
+    public void MejoraCanon()
     {
         if (canon < 5) {
             canon++;
             GameObject.Find("cannon" + canon).GetComponent<Image>().sprite = circLleno;
         }
     }
-    public void mejoraFlap()
+    public void MejoraFlap()
     {
         if (flap < 5)
         {
@@ -81,7 +79,7 @@ public class MainMenu : MonoBehaviour
             GameObject.Find("flaps" + flap).GetComponent<Image>().sprite = circLleno;
         }
     }
-    public void mejoraLife()
+    public void MejoraLife()
     {
         if (life < 4)
         {
@@ -89,7 +87,7 @@ public class MainMenu : MonoBehaviour
             GameObject.Find("life" + life).GetComponent<Image>().sprite = circLleno;
         }
     }
-    public void mejoraFall()
+    public void MejoraFall()
     {
         if (fall < 5)
         {

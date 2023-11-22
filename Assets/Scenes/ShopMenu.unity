@@ -1176,7 +1176,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144616376}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadLevelUi
+        m_MethodName: LoadLevelMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1388,7 +1388,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144616376}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: mejoraLife
+        m_MethodName: MejoraLife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1899,7 +1899,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144616376}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: mejoraFall
+        m_MethodName: MejoraFall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2264,7 +2264,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144616376}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: mejoraCanon
+        m_MethodName: MejoraCanon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5219,7 +5219,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144616376}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: mejoraFlap
+        m_MethodName: MejoraFlap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

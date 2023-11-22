@@ -46,6 +46,6 @@ public class PauseMenu : MonoBehaviour
 
     public void SelectLevel()
     {
-        SceneManager.LoadScene("uiNivel");
+        SceneManager.LoadScene("LevelMenu");
     }
 }
