@@ -3329,9 +3329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d6beeef58229c4cb0f9406613c4347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   jumpForce: 10
   rb: {fileID: 1366553636}
+  camara: {fileID: 1505610278}
+  jumpLimitFromCamera: 3
 --- !u!61 &1366553638
 BoxCollider2D:
   m_ObjectHideFlags: 0
