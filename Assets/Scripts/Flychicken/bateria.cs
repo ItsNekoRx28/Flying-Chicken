@@ -6,7 +6,6 @@ public class bateria : MonoBehaviour
 {
 
     private Animator animator;
-    private int vuelo;
     public MovingTheWings A;
     // Start is called before the first frame update
     void Start()
