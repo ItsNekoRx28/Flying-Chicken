@@ -10,6 +10,7 @@ public class MovingTheWings : MonoBehaviour
     private bool isLaunched = false; // Bandera para verificar si el personaje est� en el suelo
     private Vector2 _position;
     private float move;
+    public int numberOfWings = 18;
     public CameraFollow camara;
     public float jumpLimitFromCamera;
 
@@ -32,7 +33,10 @@ public class MovingTheWings : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if(camara.upperLimit >= transform.position.y - jumpLimitFromCamera){
-                    this.Jump();
+                    if(numberOfWings > 0) {
+                        this.Jump();
+                        numberOfWings -= 1;
+                    }
                 }
             }
             // Calcula el ángulo de la velocidad en radianes
@@ -43,6 +47,9 @@ public class MovingTheWings : MonoBehaviour
 
             // Rota el objeto para que apunte en la dirección de la velocidad
             rb.MoveRotation(angulo);
+
+
+
         } 
     }
 
@@ -55,5 +62,9 @@ public class MovingTheWings : MonoBehaviour
     public bool getIsLaunched(){
         return isLaunched;
     }
-    
+
+    public int getNumberOfWings() { 
+        return numberOfWings;
+    }
+
 }
