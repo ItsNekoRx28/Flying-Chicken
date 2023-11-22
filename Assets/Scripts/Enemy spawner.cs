@@ -48,7 +48,7 @@ public class Enemyspawner : MonoBehaviour
                 case float n when (n > 20 && n <= 40):
                     objeto = balloonPrefab;
                     break;
-                case float n when (n > 40 && n <= 60):
+                case float n when (n > 40):
                     objeto = planePrefab;
                     break;
                 default:
