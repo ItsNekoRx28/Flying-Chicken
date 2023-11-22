@@ -1,69 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
+using System.Collections;
+using System.Collections.Generic;
 
 public class MovingTheWings : MonoBehaviour
 {
-    public float speed = 5f; // Velocidad de movimiento hacia adelante
     public float jumpForce = 10f; // Fuerza de salto
-    private Rigidbody2D rb; // Referencia al componente Rigidbody
+    public Rigidbody2D rb; // Referencia al componente Rigidbody
     private bool isLaunched = false; // Bandera para verificar si el personaje est� en el suelo
     private Vector2 _position;
     private float move;
+    public CameraFollow camara;
+    public float jumpLimitFromCamera;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-
     void Update()
     {
         
-
         // Lanzar el proyectil cuando se presiona la tecla de espacio por primera vez
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isLaunched = true;
-           
         }
 
         if (isLaunched) {
-            // Mover el personaje hacia adelante
-            //rb.AddForce(transform.forward * speed);
-            //float move = Input.GetAxis("Horizontal");
-            //rb.velocity = new Vector2(move * speed, rb.velocity.y);
-                //rb.velocity = transform.up * speed;
 
-            if (Input.GetKeyDown(KeyCode.Space) && isLaunched)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                rb.velocity = transform.up * speed;
-
+                if(camara.upperLimit >= transform.position.y - jumpLimitFromCamera){
+                    this.Jump();
+                }
             }
-        }
+            // Calcula el ángulo de la velocidad en radianes
+            float angulo = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
 
-        
+            // Convierte el ángulo a grados
+            angulo = angulo * Mathf.Rad2Deg;
+
+            // Rota el objeto para que apunte en la dirección de la velocidad
+            rb.MoveRotation(angulo);
+        } 
     }
 
-
-        private void OnCollisionEnter2D(Collision2D collision)
+    public void Jump()
     {
-        // Verifica si la colisión es con un objeto que tenga la etiqueta "Suelo" (debes asignar esta etiqueta al objeto del suelo).
-        if (collision.gameObject.CompareTag("floor"))
-        {
-            // Reinicia la partida cargando la escena actual.
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        rb.AddForce(Vector2.up, ForceMode2D.Impulse); //Anade la vertical
+        rb.velocity = new Vector2(rb.velocity.x, transform.up.y * jumpForce); //Mantiene la horizontal y cambia la vertical
     }
 
-
+    public bool getIsLaunched(){
+        return isLaunched;
+    }
     
-
 }

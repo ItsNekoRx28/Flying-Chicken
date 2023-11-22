@@ -8,14 +8,16 @@ TagManager:
   - floor
   - wall
   - WinMsg
+  - Enemies
+  - Coin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pollo
   - Water
   - UI
-  - 
+  - Enemies
   - 
   - 
   - 

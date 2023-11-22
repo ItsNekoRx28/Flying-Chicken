@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class GameUtils : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public GameObject gameOverUI;
+    public GameObject winUI;
     private bool isPaused = false;
+    private bool isGameOver = false;
+    private bool isGameWin = false;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +20,13 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
             {
                 Resume();
+            }
+            else if (isGameOver)
+            {
+                Restart();
+            }
+            else if (isGameWin){
+                //ir al menu principal
             }
             else
             {
@@ -37,6 +48,21 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
     }
+
+    public void GameOver()
+    {
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        isGameOver = true;
+    }
+
+    public void Win()
+    {
+        winUI.SetActive(true);
+        Time.timeScale = 0f;
+        isGameWin = true;
+    }
+
     public void Restart()
     {
         // Carga la escena actual de nuevo
@@ -44,8 +70,9 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
-    public void SelectLevel()
+    public void QuitGame()
     {
-        SceneManager.LoadScene("LevelMenu");
+        // Cierra la aplicaci�n
+        Application.Quit();
     }
 }
