@@ -44,9 +44,8 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
-    public void QuitGame()
+    public void SelectLevel()
     {
-        // Cierra la aplicación
-        Application.Quit();
+        SceneManager.LoadScene("uiNivel");
     }
 }
