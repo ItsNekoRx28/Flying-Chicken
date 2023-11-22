@@ -11,6 +11,8 @@ public class MovingTheWings : MonoBehaviour
     private bool isLaunched = false; // Bandera para verificar si el personaje est� en el suelo
     private Vector2 _position;
     private float move;
+    private int numberOfWings = 18;
+    
 
     void Start()
     {
@@ -30,7 +32,10 @@ public class MovingTheWings : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                this.Jump();
+                if(numberOfWings > 0) {
+                    this.Jump();
+                    numberOfWings -= 1;
+                }
 
             }
             // Calcula el ángulo de la velocidad en radianes
@@ -41,6 +46,9 @@ public class MovingTheWings : MonoBehaviour
 
             // Rota el objeto para que apunte en la dirección de la velocidad
             rb.MoveRotation(angulo);
+
+
+
         } 
     }
 
@@ -48,11 +56,15 @@ public class MovingTheWings : MonoBehaviour
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Anade la vertical
         rb.velocity = new Vector2(rb.velocity.x, transform.up.y * speed); //Mantiene la horizontal y cambia la vertical
-
+        
     }
 
     public bool getIsLaunched(){
         return isLaunched;
     }
-    
+
+    public int getNumberOfWings() { 
+        return numberOfWings;
+    }
+
 }
