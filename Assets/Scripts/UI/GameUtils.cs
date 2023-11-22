@@ -75,4 +75,10 @@ public class GameUtils : MonoBehaviour
         // Cierra la aplicaci�n
         Application.Quit();
     }
+
+    public void BackToMenu()
+    {
+        // Carga la escena actual de nuevo
+        SceneManager.LoadScene("LevelMenu");
+    }
 }
