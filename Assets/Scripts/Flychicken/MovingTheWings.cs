@@ -11,7 +11,7 @@ public class MovingTheWings : MonoBehaviour
     private bool isLaunched = false; // Bandera para verificar si el personaje est� en el suelo
     private Vector2 _position;
     private float move;
-    private int numberOfWings = 18;
+    private static int numberOfWings = 18;
     
 
     void Start()
