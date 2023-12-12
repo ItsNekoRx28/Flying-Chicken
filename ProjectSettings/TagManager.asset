@@ -10,6 +10,7 @@ TagManager:
   - WinMsg
   - Enemies
   - Coin
+  - techo
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: fondo
+    uniqueID: 4279450675
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: pollo
+    uniqueID: 1592464687
+    locked: 0
+  - name: cannon
+    uniqueID: 1679357543
+    locked: 0
+  - name: enemigos
+    uniqueID: 2754551467
     locked: 0
