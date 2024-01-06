@@ -10,6 +10,7 @@ public class Enemyspawner : MonoBehaviour
     public GameObject balloonPrefab;
     public GameObject carPrefab;
     public GameObject jumpPadPrefab;
+    public GameObject monedaPrefab;
     GameObject objeto;
     float altura;
     private float spawnNext = 0;
@@ -61,7 +62,9 @@ public class Enemyspawner : MonoBehaviour
             }
             float alturaSpawn = Random.Range(alturaMin, alturaMax);
             Vector2 posicion = new Vector2(this.transform.position.x, alturaSpawn);
+            Vector2 posicionMoneda = new Vector2(this.transform.position.x, alturaSpawn+3);
             GameObject spawned = Instantiate(objeto, posicion, Quaternion.identity);
+            GameObject monedaSpawn = Instantiate(monedaPrefab, posicionMoneda, Quaternion.identity);
         }
 
 
