@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
+
 public class MovingTheWings : MonoBehaviour
 {
     public float jumpForce = 10f; // Fuerza de salto
@@ -33,7 +34,11 @@ public class MovingTheWings : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if(camara.upperLimit >= transform.position.y - jumpLimitFromCamera){
-                    if(numberOfWings > 0) {
+                    if (isStaminaOn())
+                    {
+                        this.Jump();
+                    }
+                    else if (numberOfWings > 0) {
                         this.Jump();
                         numberOfWings -= 1;
                     }
@@ -47,8 +52,6 @@ public class MovingTheWings : MonoBehaviour
 
             // Rota el objeto para que apunte en la dirección de la velocidad
             rb.MoveRotation(angulo);
-
-
 
         } 
     }
@@ -65,6 +68,11 @@ public class MovingTheWings : MonoBehaviour
 
     public int getNumberOfWings() { 
         return numberOfWings;
+    }
+
+    private bool isStaminaOn()
+    {
+        return PlayerPrefs.GetInt("EstaminaActivada", 0) == 1;
     }
 
 }

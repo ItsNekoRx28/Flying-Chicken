@@ -13,7 +13,10 @@ public class Restart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("floor"))
         {
-            gameUtils.GameOver();
+            if (!isFallProtectionOn())
+            {
+                gameUtils.GameOver();
+            }
         }
     }
 
@@ -23,6 +26,11 @@ public class Restart : MonoBehaviour
         {
             gameUtils.Win();
         }
+    }
+
+    private bool isFallProtectionOn()
+    {
+        return PlayerPrefs.GetInt("ProteccionCaidaActivada", 0) == 1;
     }
 
 }
