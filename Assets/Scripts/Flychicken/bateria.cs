@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bateria : MonoBehaviour
+public class Bateria : MonoBehaviour
 {
 
     private Animator animator;
     public MovingTheWings A;
+
     // Start is called before the first frame update
     void Start()
     {
