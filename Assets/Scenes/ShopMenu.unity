@@ -3476,6 +3476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circLleno: {fileID: 21300000, guid: e595611d6ddf62d43b3d1fb1e87410cf, type: 3}
+  coinText: {fileID: 1099786113}
 --- !u!4 &1144616377
 Transform:
   m_ObjectHideFlags: 0
