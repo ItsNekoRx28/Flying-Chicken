@@ -12,13 +12,13 @@ public class Despawner : MonoBehaviour
         {
             Debug.Log("Borrado cosa");
             // Reinicia la partida cargando la escena actual
-            Destroy(obj: collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Coin"))
         {
             Debug.Log("Borrado monedo");
             // Reinicia la partida cargando la escena actual
-            Destroy(obj: collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 }
