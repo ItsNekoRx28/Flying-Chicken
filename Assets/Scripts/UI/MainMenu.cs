@@ -76,6 +76,7 @@ public class MainMenu : MonoBehaviour
         if (canon < 5 && transaccion()) {
             canon++;
             GameObject.Find("cannon" + canon).GetComponent<Image>().sprite = circLleno;
+            PlayerPrefs.SetInt("cannon", canon);
         }
     }
 
@@ -85,6 +86,7 @@ public class MainMenu : MonoBehaviour
         {
             flap++;
             GameObject.Find("flaps" + flap).GetComponent<Image>().sprite = circLleno;
+            PlayerPrefs.SetInt("flap", flap);
         }
     }
 
@@ -94,6 +96,7 @@ public class MainMenu : MonoBehaviour
         {
             life++;
             GameObject.Find("life" + life).GetComponent<Image>().sprite = circLleno;
+            PlayerPrefs.SetInt("life", life);
         }
     }
     public void MejoraFall()
@@ -102,6 +105,7 @@ public class MainMenu : MonoBehaviour
         {
             fall++;
             GameObject.Find("fall" + fall).GetComponent<Image>().sprite = circLleno;
+            PlayerPrefs.SetInt("fall", fall);
         }
     }
 

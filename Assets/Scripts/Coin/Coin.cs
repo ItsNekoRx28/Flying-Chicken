@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.AddCoin(10);
+            GameManager.instance.AddCoin(100);
             gameObject.SetActive(false);
             Physics2D.IgnoreCollision(other, GetComponent<Collider2D>(), true);
         }
