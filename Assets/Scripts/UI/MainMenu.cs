@@ -43,8 +43,6 @@ public class MainMenu : MonoBehaviour
         }
 
         coinCount = PlayerPrefs.GetInt("Coins");
-        print("MAINMENU");
-        print(coinCount);
         coinText.text = coinCount.ToString();
     }
 
