@@ -10,7 +10,6 @@ public class balloon : MonoBehaviour
 
     // Referencia al segundo collider
     private Collider2D segundoCollider;
-   
     void Start()
     {
     }
@@ -21,7 +20,7 @@ public class balloon : MonoBehaviour
         {
             Debug.Log("Pipo 1");
             // Reinicia la partida cargando la escena actual
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.instance.GameOver();
         }
         else
         {

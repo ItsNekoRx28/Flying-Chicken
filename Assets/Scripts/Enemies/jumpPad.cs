@@ -10,6 +10,7 @@ public class jumpPad : MonoBehaviour
     public float jumpForce = 20f; // Fuerza de salto
     public AudioSource jumpSoundSource;
     public AudioClip jumpSoundClip;
+    public GameUtils gameUtils;
 
     Rigidbody2D rb;
     private void Start()

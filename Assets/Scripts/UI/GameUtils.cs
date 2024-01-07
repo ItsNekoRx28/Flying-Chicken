@@ -88,6 +88,8 @@ public class GameUtils : MonoBehaviour
     public void BackToMenu()
     {
         // Carga la escena actual de nuevo
+        Resume();
         SceneManager.LoadScene("LevelMenu");
+        
     }
 }
