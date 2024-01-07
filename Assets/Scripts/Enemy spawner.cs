@@ -18,6 +18,7 @@ public class Enemyspawner : MonoBehaviour
     RectTransform miRectangulo;
     float altura_media;
     private bool isLaunched = false;
+    float alturaSpawn;
 
     // Start is called before the first frame update
     private void Start()
@@ -60,7 +61,13 @@ public class Enemyspawner : MonoBehaviour
             {
                 return;
             }
-            float alturaSpawn = Random.Range(alturaMin, alturaMax);
+            if (objeto == carPrefab)
+            {
+               alturaSpawn = -3;
+            }
+            else
+                alturaSpawn = Random.Range(alturaMin, alturaMax);
+
             Vector2 posicion = new Vector2(this.transform.position.x, alturaSpawn);
             Vector2 posicionMoneda = new Vector2(this.transform.position.x, alturaSpawn+3);
             GameObject spawned = Instantiate(objeto, posicion, Quaternion.identity);
