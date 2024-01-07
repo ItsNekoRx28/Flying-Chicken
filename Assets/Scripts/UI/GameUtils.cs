@@ -12,6 +12,10 @@ public class GameUtils : MonoBehaviour
     private bool isGameOver = false;
     private bool isGameWin = false;
 
+    public AudioSource SoundSource;
+    public AudioSource BackgroundSoundSource;
+    public AudioClip deathSoundClip;
+
     // Update is called once per frame
     void Update()
     {
@@ -37,6 +41,7 @@ public class GameUtils : MonoBehaviour
 
     public void Resume()
     {
+        BackgroundSoundSource.Play();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -44,6 +49,7 @@ public class GameUtils : MonoBehaviour
 
     public void Pause()
     {
+        BackgroundSoundSource.Pause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -51,6 +57,8 @@ public class GameUtils : MonoBehaviour
 
     public void GameOver()
     {
+        BackgroundSoundSource.Stop();
+        SoundSource.PlayOneShot(deathSoundClip);
         gameOverUI.SetActive(true);
         Time.timeScale = 0f;
         isGameOver = true;
@@ -58,6 +66,7 @@ public class GameUtils : MonoBehaviour
 
     public void Win()
     {
+        BackgroundSoundSource.Stop();
         winUI.SetActive(true);
         Time.timeScale = 0f;
         isGameWin = true;
@@ -79,6 +88,8 @@ public class GameUtils : MonoBehaviour
     public void BackToMenu()
     {
         // Carga la escena actual de nuevo
+        Resume();
         SceneManager.LoadScene("LevelMenu");
+        
     }
 }

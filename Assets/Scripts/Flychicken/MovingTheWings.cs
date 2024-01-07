@@ -15,6 +15,9 @@ public class MovingTheWings : MonoBehaviour
     public CameraFollow camara;
     public float jumpLimitFromCamera;
 
+    public AudioSource flappingSoundSource;
+    public AudioClip flappingSoundClip;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,6 +63,7 @@ public class MovingTheWings : MonoBehaviour
     {
         rb.AddForce(Vector2.up, ForceMode2D.Impulse); //Anade la vertical
         rb.velocity = new Vector2(rb.velocity.x, transform.up.y * jumpForce); //Mantiene la horizontal y cambia la vertical
+        flappingSoundSource.PlayOneShot(flappingSoundClip);
     }
 
     public bool getIsLaunched(){

@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;   
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private int coinCount;
     public GameUtils gameUtils;
     public Text coinText;
+    public AudioSource SoundSource;
+    public AudioClip coinSoundClip;
 
     void Awake()
     {
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Coins", coinCount);
         PlayerPrefs.Save();
+        SoundSource.PlayOneShot(coinSoundClip);
     }
 
     public void GameOver() // Añade esta función

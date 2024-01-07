@@ -50,7 +50,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Main_V0.2.1");
+        SceneManager.LoadScene("Main_V0.2.3");
     }
 
     public void LoadStartMenu()

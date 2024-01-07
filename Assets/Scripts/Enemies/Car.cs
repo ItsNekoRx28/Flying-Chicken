@@ -20,7 +20,7 @@ public class Car : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Reinicia la partida cargando la escena actual
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.instance.GameOver();
         }
         else
         {

@@ -12,7 +12,6 @@ public class CannonMovementScript : MonoBehaviour
     private bool chickenLaunched = false;
 
 
-
     void Update()
     {
         if(!chickenLaunched){
