@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private int coinCount;
     public GameUtils gameUtils;
     public Text coinText;
+    public AudioSource SoundSource;
+    public AudioClip coinSoundClip;
 
     void Awake()
     {
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         coinCount += amount;
         coinText.text = "Coins: " + coinCount.ToString();
+        SoundSource.PlayOneShot(coinSoundClip);
     }
 
     public void GameOver() // Añade esta función
