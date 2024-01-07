@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevel1()
     {
+        PlayerPrefs.SetInt("levelLife", PlayerPrefs.GetInt("life"));
         SceneManager.LoadScene("Main_V0.2.3");
     }
 

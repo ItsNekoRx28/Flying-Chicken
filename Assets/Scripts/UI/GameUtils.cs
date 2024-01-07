@@ -75,6 +75,7 @@ public class GameUtils : MonoBehaviour
     public void Restart()
     {
         // Carga la escena actual de nuevo
+        PlayerPrefs.SetInt("levelLife", PlayerPrefs.GetInt("life"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Resume();
     }
