@@ -61,7 +61,9 @@ public class MovingTheWings : MonoBehaviour
             // Rota el objeto para que apunte en la dirección de la velocidad
             rb.MoveRotation(angulo);
 
-        } 
+            rb.gravityScale = Mathf.Lerp(1f, 0.2f, PlayerPrefs.GetInt("fall") / 5f);
+
+        }
     }
 
     public void Jump()
