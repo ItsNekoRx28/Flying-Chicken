@@ -33,7 +33,10 @@ public class CannonMovementScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && !chickenLaunched)
             {
                 Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
-                rb.velocity = transform.up * bulletSpeed;
+                int improve = PlayerPrefs.GetInt("cannon");
+                print(improve);
+                float bulletSpeedAux = improve*100 + bulletSpeed;
+                rb.velocity = transform.up * bulletSpeedAux;
                 chickenLaunched = true;
             }
         }
