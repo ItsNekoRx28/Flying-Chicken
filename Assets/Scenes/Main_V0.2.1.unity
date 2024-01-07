@@ -19383,6 +19383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9624414fc8253a14ca918cf3cf8e0581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cantidadInicial: 3
   planePrefab: {fileID: 1052126727252899544, guid: adc1263fc05843642a1f0f979b1488b3, type: 3}
   balloonPrefab: {fileID: 5237284166245863622, guid: a03efe15ea726b74abffcfd55d3a8a76, type: 3}
   carPrefab: {fileID: 387037951380643757, guid: a64dde8d3eb88264a9cd74de0cd5a921, type: 3}

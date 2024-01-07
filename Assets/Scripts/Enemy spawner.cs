@@ -19,17 +19,22 @@ public class Enemyspawner : MonoBehaviour
     float altura_media;
     private bool isLaunched = false;
     float alturaSpawn;
-    public static List<GameObject> poolPlane = new List<GameObject>();
-    public static List<GameObject> poolBalloon = new List<GameObject>();
-    public static List<GameObject> poolCar = new List<GameObject>();
-    public static List<GameObject> poolJumpPad = new List<GameObject>();
-    public static List<GameObject> poolMoneda = new List<GameObject>();
+    public static List<GameObject> poolPlane;
+    public static List<GameObject> poolBalloon;
+    public static List<GameObject> poolCar;
+    public static List<GameObject> poolJumpPad;
+    public static List<GameObject> poolMoneda;
 
 
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log("Spawn Cosas");
+        poolPlane = new List<GameObject>();
+        poolBalloon = new List<GameObject>();
+        poolCar = new List<GameObject>();
+        poolJumpPad = new List<GameObject>();
+        poolMoneda = new List<GameObject>();
+    Debug.Log("Spawn Cosas");
         miRectangulo = GetComponent<RectTransform>();
         altura_media = miRectangulo.rect.yMax - miRectangulo.rect.yMin;
         for (int i = 0; i < cantidadInicial; i++)
@@ -66,7 +71,7 @@ public class Enemyspawner : MonoBehaviour
             altura = this.transform.position.y; // La altura del objeto
             float alturaMin = altura_media + altura;
             float alturaMax = altura-altura_media;
-
+            
             switch (altura)
             {
                 case float n when (n <= 20):
