@@ -93,7 +93,7 @@ public class MainMenu : MonoBehaviour
     public void MejoraLife()
     {
         if (life < 4 && transaccion())
-        {
+        {  
             life++;
             GameObject.Find("life" + life).GetComponent<Image>().sprite = circLleno;
             PlayerPrefs.SetInt("life", life);

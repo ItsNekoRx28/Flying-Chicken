@@ -16857,6 +16857,7 @@ MonoBehaviour:
   jumpLimitFromCamera: 3
   flappingSoundSource: {fileID: 1366553642}
   flappingSoundClip: {fileID: 8300000, guid: 67711873015bf2a4cad33cfe65f3b7bd, type: 3}
+  velocidadLimite: 20
 --- !u!61 &1366553638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19591,7 +19592,7 @@ GameObject:
   - component: {fileID: 1562927198}
   - component: {fileID: 1562927197}
   - component: {fileID: 1562927199}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Spawner
   m_TagString: Enemies
   m_Icon: {fileID: 0}
