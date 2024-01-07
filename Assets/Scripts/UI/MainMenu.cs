@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public Text coinText;
     private static int coinCount;
 
-    private static int cost = 10;
+    private static int cost = 3;
 
     // Start is called before the first frame update
     void Start()
