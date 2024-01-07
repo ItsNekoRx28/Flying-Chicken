@@ -34,8 +34,7 @@ public class CannonMovementScript : MonoBehaviour
             {
                 Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
                 int improve = PlayerPrefs.GetInt("cannon");
-                print(improve);
-                float bulletSpeedAux = improve*100 + bulletSpeed;
+                float bulletSpeedAux = improve*7 + bulletSpeed;
                 rb.velocity = transform.up * bulletSpeedAux;
                 chickenLaunched = true;
             }

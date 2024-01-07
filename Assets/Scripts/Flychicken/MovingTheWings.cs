@@ -17,6 +17,8 @@ public class MovingTheWings : MonoBehaviour
 
     public AudioSource flappingSoundSource;
     public AudioClip flappingSoundClip;
+   
+    public float velocidadLimite = 20f;
 
     void Start()
     {
@@ -32,10 +34,13 @@ public class MovingTheWings : MonoBehaviour
             isLaunched = true;
         }
 
-        if (isLaunched) {
-
+        if (isLaunched) {   
+          
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                if(rb.velocity.magnitude > velocidadLimite)
+                    rb.velocity *= 0.95f;
+
                 if(camara.upperLimit >= transform.position.y - jumpLimitFromCamera){
                     if (isStaminaOn())
                     {
