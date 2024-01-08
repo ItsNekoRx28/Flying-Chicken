@@ -7,7 +7,7 @@ public class DistanceCounter : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text distanceText;
-    private float distanceTravelled = 0f;
+    private int distanceTravelled = 0;
     public GameObject startPos;
 
     void Start()
@@ -20,7 +20,7 @@ public class DistanceCounter : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.1f);
-            distanceTravelled = (startPos.transform.position.x + this.transform.position.x);
+            distanceTravelled = ((int)(startPos.transform.position.x + this.transform.position.x));
             distanceText.text = "DISTANCE: " + distanceTravelled.ToString("0.00") + " m";
         }
     }

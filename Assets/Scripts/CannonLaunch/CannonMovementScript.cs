@@ -10,7 +10,8 @@ public class CannonMovementScript : MonoBehaviour
     public float bulletSpeed = 20f;
     public float rotationZ;
     private bool chickenLaunched = false;
-
+    public AudioSource cannonSoundSource;
+    public AudioClip cannonSoundClip;
 
 
     void Update()
@@ -34,8 +35,11 @@ public class CannonMovementScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && !chickenLaunched)
             {
                 Rigidbody2D rb = Pollo.GetComponent<Rigidbody2D>();
-                rb.velocity = transform.up * bulletSpeed;
+                int improve = PlayerPrefs.GetInt("cannon");
+                float bulletSpeedAux = improve*7 + bulletSpeed;
+                rb.velocity = transform.up * bulletSpeedAux;
                 chickenLaunched = true;
+                cannonSoundSource.PlayOneShot(cannonSoundClip);
             }
         }
     }
