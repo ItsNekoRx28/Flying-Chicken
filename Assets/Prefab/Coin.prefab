@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0717c485c5b13cb4783e4cff341ef82c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,8 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6347262e777006f4f9237e077b64d26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSoundSource: {fileID: 0}
-  coinSoundClip: {fileID: 8300000, guid: b0845446dae569e4ba185d6bf37bab39, type: 3}
 --- !u!50 &6282740504619552407
 Rigidbody2D:
   serializedVersion: 4
