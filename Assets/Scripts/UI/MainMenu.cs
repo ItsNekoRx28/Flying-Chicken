@@ -19,8 +19,12 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.Find("cannon1") != null)
-        {
+        bool isShopMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("ShopMenu"));
+        bool isMainMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("MainMenu"));
+
+        //if (GameObject.Find("cannon1") != null)
+        if (isShopMenu)
+            {
             for (int i = 1; i <= canon; i++)
             {
                 GameObject.Find("cannon" + i).GetComponent<Image>().sprite = circLleno;
@@ -42,8 +46,11 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        coinCount = PlayerPrefs.GetInt("Coins");
-        coinText.text = coinCount.ToString();
+        if (!isMainMenu)
+        {
+            coinCount = PlayerPrefs.GetInt("Coins");
+            coinText.text = coinCount.ToString();
+        }
     }
 
     public void LoadLevel1()

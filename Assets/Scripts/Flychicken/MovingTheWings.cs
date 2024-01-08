@@ -23,11 +23,11 @@ public class MovingTheWings : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        numberOfWings = 18 + 5 * PlayerPrefs.GetInt("flap");
     }
 
     void Update()
     {
-        
         // Lanzar el proyectil cuando se presiona la tecla de espacio por primera vez
         if (Input.GetKeyDown(KeyCode.Space))
         {

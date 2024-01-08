@@ -9,7 +9,7 @@ public class Persist : MonoBehaviour
     {
         // Se reinician los valores de mejora por sesion
         PlayerPrefs.SetInt("cannon", 0);
-        PlayerPrefs.SetInt("flaps", 0);
+        PlayerPrefs.SetInt("flap", 0);
         PlayerPrefs.SetInt("fall", 0);
         PlayerPrefs.SetInt("life", 0);
     }
