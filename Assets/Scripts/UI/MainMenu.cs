@@ -19,7 +19,9 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(PlayerPrefs.GetInt("persistencia") != 1){
+            PlayerPrefs.SetInt("persistencia", 0);
+        }
         bool isShopMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("ShopMenu"));
         bool isMainMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("MainMenu"));
         bool isTutorialMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("TutorialMenu"));
@@ -64,6 +66,8 @@ public class MainMenu : MonoBehaviour
     public void LoadStartMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        PlayerPrefs.SetInt("persistencia", 1);
+
     }
 
     public void LoadLevelMenu()
@@ -93,6 +97,7 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
+        PlayerPrefs.SetInt("persistencia", 0);
         Application.Quit();
     }
 
