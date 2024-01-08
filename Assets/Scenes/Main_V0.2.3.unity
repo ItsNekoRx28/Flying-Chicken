@@ -20464,6 +20464,8 @@ MonoBehaviour:
   Pollo: {fileID: 1366553633}
   bulletSpeed: 15
   rotationZ: 0
+  cannonSoundSource: {fileID: 1640274923}
+  cannonSoundClip: {fileID: 8300000, guid: 2db8d45d423512245acfb688c2762e1c, type: 3}
 --- !u!82 &1640274923
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20476,8 +20478,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.101
-  m_Pitch: 1.98
+  m_Volume: 0.129
+  m_Pitch: 1.54
   Loop: 0
   Mute: 0
   Spatialize: 0

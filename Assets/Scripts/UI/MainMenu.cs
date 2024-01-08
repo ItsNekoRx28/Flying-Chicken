@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
         }
         bool isShopMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("ShopMenu"));
         bool isMainMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("MainMenu"));
+        bool isTutorialMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("TutorialMenu"));
 
         //if (GameObject.Find("cannon1") != null)
         if (isShopMenu)
@@ -49,7 +50,7 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        if (!isMainMenu)
+        if (!isMainMenu && !isTutorialMenu)
         {
             coinCount = PlayerPrefs.GetInt("Coins");
             coinText.text = coinCount.ToString();
@@ -71,12 +72,27 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevelMenu()
     {
-        SceneManager.LoadScene("LevelMenu");
+        bool isMainMenu = SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("MainMenu"));
+        bool tutorialCompleted = PlayerPrefs.GetInt("tutorial") == 1? true : false;
+        if (isMainMenu && !tutorialCompleted)
+        {
+            LoadTutorialMenu();
+        }
+        else
+        {
+            SceneManager.LoadScene("LevelMenu");
+        }
     }
 
     public void LoadShopMenu()
     {
         SceneManager.LoadScene("ShopMenu");
+    }
+
+    public void LoadTutorialMenu()
+    {
+        SceneManager.LoadScene("TutorialMenu");
+        PlayerPrefs.SetInt("tutorial", 1);
     }
 
     public void ExitGame()

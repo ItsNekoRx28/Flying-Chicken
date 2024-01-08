@@ -10,6 +10,8 @@ public class CannonMovementScript : MonoBehaviour
     public float bulletSpeed = 20f;
     public float rotationZ;
     private bool chickenLaunched = false;
+    public AudioSource cannonSoundSource;
+    public AudioClip cannonSoundClip;
 
 
     void Update()
@@ -37,6 +39,7 @@ public class CannonMovementScript : MonoBehaviour
                 float bulletSpeedAux = improve*7 + bulletSpeed;
                 rb.velocity = transform.up * bulletSpeedAux;
                 chickenLaunched = true;
+                cannonSoundSource.PlayOneShot(cannonSoundClip);
             }
         }
     }
