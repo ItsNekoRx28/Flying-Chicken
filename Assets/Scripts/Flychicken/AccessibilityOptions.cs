@@ -19,12 +19,12 @@ public class AccessibilityOptions : MonoBehaviour
 
     void Update()
     {
-        if (PlayerPrefs.GetInt("EstaminaActivada", 0) == 1)
+        if (PlayerPrefs.GetInt("EstaminaActivada") == 1)
         {
             staminaToggle.SetIsOnWithoutNotify(true);
         }
 
-        if (PlayerPrefs.GetInt("ProteccionCaidaActivada", 0) == 1)
+        if (PlayerPrefs.GetInt("ProteccionCaidaActivada") == 1)
         {
             fallProtectionToggle.SetIsOnWithoutNotify(true);
         }

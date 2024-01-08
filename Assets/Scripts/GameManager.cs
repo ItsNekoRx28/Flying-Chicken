@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static Boolean isPolloLanzado = false;
+    public static bool isPolloLanzado = false;
     private int coinCount;
     public GameUtils gameUtils;
     public Text coinText;
@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     {
         coinCount += amount;
         coinText.text = "Coins: " + coinCount.ToString();
+
+        PlayerPrefs.SetInt("Coins", coinCount);
+        PlayerPrefs.Save();
         SoundSource.PlayOneShot(coinSoundClip);
     }
 
