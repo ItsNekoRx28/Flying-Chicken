@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         coinCount += amount;
         coinText.text = "Coins: " + coinCount.ToString();
 
-        PlayerPrefs.SetInt("Coins", coinCount);
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + coinCount);
         PlayerPrefs.Save();
         SoundSource.PlayOneShot(coinSoundClip);
     }
