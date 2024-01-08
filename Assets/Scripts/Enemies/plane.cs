@@ -23,7 +23,7 @@ public class plane : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Verifica si la colisi�n es con un objeto que tenga la etiqueta "Suelo" (etiqueta asignada al objeto del suelo)
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && PlayerPrefs.GetInt("levelLife") == 0)
         {
             // Reinicia la partida cargando la escena actual
             GameManager.instance.GameOver();
