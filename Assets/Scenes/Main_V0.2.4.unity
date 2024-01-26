@@ -19687,7 +19687,7 @@ MonoBehaviour:
   balloonPrefab: {fileID: 5237284166245863622, guid: a03efe15ea726b74abffcfd55d3a8a76, type: 3}
   carPrefab: {fileID: 387037951380643757, guid: a64dde8d3eb88264a9cd74de0cd5a921, type: 3}
   jumpPadPrefab: {fileID: 7581803019948417286, guid: 11fdd07dcdc86b545ba3acb5172bc96c, type: 3}
-  monedaPrefab: {fileID: 1992386001196548562, guid: 0618832fafa1450498b90c04c2d5ada4, type: 3}
+  monedaPrefab: {fileID: 1819166011833948279, guid: c530d054c18ad944796757073f683442, type: 3}
   spawnRatePerMinute: 20
 --- !u!1 &1563308546
 GameObject:
