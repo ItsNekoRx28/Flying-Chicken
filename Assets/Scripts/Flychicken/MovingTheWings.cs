@@ -6,24 +6,24 @@ using System.Collections.Generic;
 
 public class MovingTheWings : MonoBehaviour
 {
-    public float jumpForce = 10f; // Fuerza de salto
+    public float jumpForce; // Fuerza de salto
     public Rigidbody2D rb; // Referencia al componente Rigidbody
     private bool isLaunched = false; // Bandera para verificar si el personaje est� en el suelo
     private Vector2 _position;
     private float move;
-    public int numberOfWings = 18;
+    public int numberOfWings;
     public CameraFollow camara;
     public float jumpLimitFromCamera;
 
     public AudioSource flappingSoundSource;
     public AudioClip flappingSoundClip;
    
-    public float velocidadLimite = 20f;
+    public float velocidadLimite;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        numberOfWings = 18 + 5 * PlayerPrefs.GetInt("flap");
+        numberOfWings = numberOfWings + 5 * PlayerPrefs.GetInt("flap");
     }
 
     void Update()
